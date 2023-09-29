@@ -27,6 +27,7 @@ public class PessoaController {
 		return pessoas;
 	
 	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Pessoa> findById(@PathVariable Long id){
 		return pessoaRepository.findById(id).map(gravado -> ResponseEntity.ok().body(gravado)).orElse(ResponseEntity.notFound().build());
